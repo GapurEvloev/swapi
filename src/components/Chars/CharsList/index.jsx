@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import styles from './CharsList.module.scss';
 
 const CharsList = ({chars}) => {
@@ -17,5 +19,9 @@ const CharsList = ({chars}) => {
     </ul>
   );
 };
+
+CharsList.propTypes = {
+  chars: PropTypes.array,
+}
 
 export default CharsList;

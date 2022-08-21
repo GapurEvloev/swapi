@@ -1,16 +1,19 @@
 import React from 'react';
-import styles from './Chars.module.scss';
-import {getApiResource} from "../../utils/network";
-import {API_CHARS} from "../../constants/api";
-import {getCharsId, getCharsImg} from "../../services/getCharsData";
-import CharsList from "../../components/Chars/CharsList";
+import PropTypes from 'prop-types';
+
 import {withErrorApi} from "../../hoc-helpers/withErrorApi";
+import CharsList from "../../components/Chars/CharsList";
+import {getApiResource} from "../../utils/network";
+import {getCharsId, getCharsImg} from "../../services/getCharsData";
+import {API_CHARS} from "../../constants/api";
+
+import styles from './Chars.module.scss';
 
 const Chars = ({ setErrorApi }) => {
   const [chars, setChars] = React.useState([]);
 
   const getResource = async (url) => {
-    const res = await getApiResource(1+url);
+    const res = await getApiResource(url);
     if (res) {
       const charsList = res.results.map(({ name, url })=> {
         const id = getCharsId(url);
@@ -38,12 +41,16 @@ const Chars = ({ setErrorApi }) => {
   }, []);
 
   return (
-    <div styles={styles.chars}>
+    <div className={styles.chars}>
       <>
         {chars && <CharsList chars={chars}/>}
       </>
     </div>
   );
 };
+
+Chars.propTypes = {
+  setErrorApi: PropTypes.func,
+}
 
 export default withErrorApi(Chars);
