@@ -1,9 +1,10 @@
-import styles from './App.module.sass';
-import {getApiResource} from "../../utils/network";
+// import styles from './App.module.scss';
+
+import Chars from "../Chars";
 
 const App = () => {
   return (
-    <h1 className={styles.header}>Hello!</h1>
+    <Chars/>
   )
 }
 

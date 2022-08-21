@@ -1,14 +1,3 @@
-const SW_ROOT = "https://swapi.dev/api/";
-const SW_PEOPLE = "people/";
-
-// // вариант с использование промисов
-// export const getApiResource = (url) => {
-//   fetch(url)
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.log(error));
-// }
-
 // вариант с асинхронной функцией
 export const getApiResource = async (url) => {
   try {
@@ -25,14 +14,21 @@ export const getApiResource = async (url) => {
     console.log(error.message);
     return false;
   }
-
-
 }
 
-(async () => {
-  const body = await getApiResource(SW_ROOT+SW_PEOPLE);
-  console.log(body);
-})();
+// // вариант с использование промисов
+// export const getApiResource = (url) => {
+//   fetch(url)
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.log(error));
+// }
 
-getApiResource(SW_ROOT+SW_PEOPLE)
-  .then(body => console.log(body))
+// // вызовы
+// (async () => {
+//   const body = await getApiResource(SW_ROOT+SW_CHARS);
+//   console.log(body);
+// })();
+//
+// getApiResource(SW_ROOT+SW_CHARS)
+//   .then(body => console.log(body))
