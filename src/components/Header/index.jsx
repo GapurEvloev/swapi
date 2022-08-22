@@ -13,6 +13,9 @@ const Header = () => {
         <li>
           <NavLink to="/chars">Characters</NavLink>
         </li>
+        <li>
+          <NavLink to="/404">Not found</NavLink>
+        </li>
       </ul>
     </header>
   )

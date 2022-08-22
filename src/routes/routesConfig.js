@@ -1,5 +1,6 @@
 import Home from "../containers/Home";
 import Chars from "../containers/Chars";
+import NotFound from "../containers/NotFound";
 
 const routesConfig = [
   {
@@ -9,6 +10,10 @@ const routesConfig = [
   {
     path: "/chars",
     component: Chars,
+  },
+  {
+    path: "*",
+    component: NotFound,
   }
 ];
 
