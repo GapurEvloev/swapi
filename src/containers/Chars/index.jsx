@@ -7,7 +7,7 @@ import {getApiResource} from "../../utils/network";
 import {getCharsId, getCharsImg} from "../../services/getCharsData";
 import {API_CHARS} from "../../constants/api";
 
-import styles from './Chars.module.scss';
+// import styles from './Chars.module.scss';
 
 const Chars = ({ setErrorApi }) => {
   const [chars, setChars] = React.useState([]);
@@ -38,14 +38,13 @@ const Chars = ({ setErrorApi }) => {
 
   React.useEffect(() => {
     getResource(API_CHARS);
+    //eslint-disable-next-line
   }, []);
 
   return (
-    <div className={styles.chars}>
-      <>
-        {chars && <CharsList chars={chars}/>}
-      </>
-    </div>
+    <>
+      {chars && <CharsList chars={chars}/>}
+    </>
   );
 };
 

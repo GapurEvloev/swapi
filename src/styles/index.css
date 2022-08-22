@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "StarWars";
+  src: local("StarWars"),
+  url("../static/fonts/starjedi/Starjedi.ttf") format("truetype");
+  font-weight: bold;
+}
+
 :root {
   --color-white:       #fff;
   --color-black:       #000;
@@ -45,6 +52,31 @@
     0 6px 30px 5px rgba(0, 0, 0, 0.1),
     0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
+  --box-shadow-jedi:
+    -2px -2px 0 #ffd54e,
+    -2px -1px 0 #ffd54e,
+    -2px 0 0 #ffd54e,
+    -2px 1px 0 #ffd54e,
+    -2px 2px 0 #ffd54e,
+    -1px -2px 0 #ffd54e,
+    -1px -1px 0 #ffd54e,
+    -1px 0 0 #ffd54e,
+    -1px 1px 0 #ffd54e,
+    -1px 2px 0 #ffd54e,
+    0 -2px 0 #ffd54e,
+    0 -1px 0 #ffd54e,
+    0 0 0 #ffd54e,
+    0 1px 0 #ffd54e,
+    0 2px 0 #ffd54e,
+    1px -2px 0 #ffd54e,
+    1px -1px 0 #ffd54e,
+    1px 0 0 #ffd54e,
+    1px 1px 0 #ffd54e,
+    1px 2px 0 #ffd54e,
+    2px -2px 0 #ffd54e,
+    2px -1px 0 #ffd54e,
+    2px 0 0 #ffd54e;
+
   /* THEMES */
   --theme-light-header:   #dfe2df;
   --theme-dark-header:    #ca6c6f;
@@ -53,8 +85,8 @@
 
   --theme-light-bgimage:   linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
   --theme-dark-bgimage:    linear-gradient(to right bottom, #000000, #160b11, #20141e, #281b2e, #2b2440);
-  /*--theme-neitral-bgimage: url(@static/bg.jpg);*/
-  /*--theme-default-bgimage: var(--theme-neitral-bgimage);*/
+  --theme-neitral-bgimage: url(../static/images/bg.jpg);
+  --theme-default-bgimage: var(--theme-neitral-bgimage);
 }
 
 /***************************************************
@@ -71,7 +103,7 @@ body {
   font-family: var(--ff-main);
   font-size: var(--fz-main);
   background-color: var(--color-dark-gray);
-  /*background-image: var(--theme-default-bgimage);*/
+  background-image: var(--theme-default-bgimage);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
@@ -81,11 +113,14 @@ img {
   display: block;
 }
 .header__text {
-  line-height: 1.7;
   font-size: var(--fz-header);
-  text-shadow: 0 0 2px var(--color-black);
-  color: var(--theme-default-header);
   transition: color var(--transition);
+  color: #000;
+  text-shadow: var(--box-shadow-jedi);
+  line-height: 86%;
+  caret-color: #ffd54e;
+  letter-spacing: initial;
+  font-family: "StarWars", sans-serif;
 }
 
 /***************************************************
