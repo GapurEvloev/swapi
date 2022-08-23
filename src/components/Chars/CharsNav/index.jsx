@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
 import styles from './CharsNav.module.scss';
+import UiButton from "../../Ui/UiButton";
 
 const CharsNav = ({
   getResource,
@@ -19,23 +20,23 @@ const CharsNav = ({
         to={`/chars/?page=${counterPage - 1}`}
         className={styles.buttons}
       >
-        <button
+        <UiButton
           onClick={handlePrev}
           disabled={!prevPage}
         >
           Prev
-        </button>
+        </UiButton>
       </Link>
       <Link
         to={`/chars/?page=${counterPage + 1}`}
         className={styles.buttons}
       >
-        <button
+        <UiButton
           onClick={handleNext}
           disabled={!nextPage}
         >
           Next
-        </button>
+        </UiButton>
       </Link>
     </div>
   );

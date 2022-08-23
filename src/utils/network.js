@@ -13,10 +13,10 @@ export const changeHttp = (url) => {
 
 /**
  * For sending a request
+ * вариант с асинхронной функцией
  * @param url - for request
  * @returns {Promise<boolean|any>} - with request result
  */
-// вариант с асинхронной функцией
 export const getApiResource = async (url) => {
   try {
     const res = await fetch(url);
