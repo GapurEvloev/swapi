@@ -20,8 +20,6 @@ const Chars = ({ setErrorApi }) => {
   const query = useQueryParams();
   const queryPage = query.get("page");
 
-  console.log(prevPage, nextPage, queryPage)
-
   const getResource = async (url) => {
     const res = await getApiResource(url);
 

@@ -10,6 +10,7 @@ import styles from "./Char.module.scss"
 import {getCharsImg} from "../../services/getCharsData";
 import CharPhoto from "../../components/Char/CharPhoto";
 import CharInfo from "../../components/Char/CharInfo";
+import LinkBack from "../../components/Char/LinkBack";
 
 const Char = ({ setErrorApi }) => {
   const { charId } = useParams();
@@ -43,6 +44,7 @@ const Char = ({ setErrorApi }) => {
 
   return (
     <>
+      <LinkBack/>
       <div className={styles.char}>
         <h1 className={styles.char__name}>{charName}</h1>
         <div className={styles.char__info}>

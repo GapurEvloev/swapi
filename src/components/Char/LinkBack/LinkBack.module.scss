@@ -1,0 +1,33 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 15px;
+  font-weight: var(--font-bold);
+  font-size: 1em;
+  color: var(--color-yellow);
+  text-decoration: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+
+  &__img {
+    width: 30px;
+    height: 30px;
+    margin-right: var(--spacing-small);
+    object-fit: cover;
+    object-position: center center;
+    -webkit-transition: transform .3s linear;
+    -moz-transition: transform .3s linear;
+    -ms-transition: transform .3s linear;
+    -o-transition: transform .3s linear;
+    transition: transform .3s linear;
+  }
+  
+  &:hover &__img {
+    -webkit-transform: translateX(-5px);
+    -moz-transform: translateX(-5px);
+    -ms-transform: translateX(-5px);
+    -o-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
