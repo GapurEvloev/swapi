@@ -10,12 +10,13 @@ const App = () => {
         <Route path="/" element={<Layout/>} >
           {
             routesConfig.map((route, index) => {
-              const {path, component} = route;
-              return <Route
-                key={index}
-                path={path}
-                element={component()}
-              />
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={route.element}
+                />
+              )
             })
           }
         </Route>

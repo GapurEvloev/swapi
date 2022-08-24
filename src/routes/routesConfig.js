@@ -1,19 +1,24 @@
 import Home from "../containers/Home";
 import Chars from "../containers/Chars";
 import NotFound from "../containers/NotFound";
+import Char from "../containers/Char";
 
 const routesConfig = [
   {
     path: "/",
-    component: Home,
+    element: <Home/>,
   },
   {
     path: "/chars",
-    component: Chars,
+    element: <Chars/>,
+  },
+  {
+    path: "/chars/:charId",
+    element: <Char/>,
   },
   {
     path: "*",
-    component: NotFound,
+    element: <NotFound/>,
   }
 ];
 

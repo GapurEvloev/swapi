@@ -6,6 +6,7 @@ export const SW_CHARS = "people/";
 export const SW_PARAM_PAGE = "?page="
 
 export const API_CHARS = HTTPS+SW_ROOT+SW_CHARS+SW_PARAM_PAGE;
+export const API_CHAR = HTTPS+SW_ROOT+SW_CHARS;
 
 export const GUIDE_ROOT_IMG = "https://starwars-visualguide.com/assets/img/";
 export const GUIDE_CHARS = "characters/";
