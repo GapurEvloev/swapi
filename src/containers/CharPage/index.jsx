@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import {useParams} from "react-router";
+import {useSelector} from "react-redux";
 
 import {withErrorApi} from "../../hoc-helpers/withErrorApi";
 import {getApiResource} from "../../utils/network";
@@ -22,10 +23,15 @@ const Char = ({ setErrorApi }) => {
   const [charName, setCharName] = useState(null);
   const [charPhoto, setCharPhoto] = useState(null);
   const [charFilms, setCharFilms] = useState(null);
+  const [charFavourite, setCharFavourite] = useState(false);
+
+  const storeData = useSelector(state => state.favouriteReducer);
 
   useEffect(() => {
     (async () => {
       const res = await getApiResource(`${API_CHAR}/${charId}`);
+
+      storeData[charId] ? setCharFavourite(true) : setCharFavourite(false);
 
       if (res) {
         setCharInfo([
@@ -54,7 +60,13 @@ const Char = ({ setErrorApi }) => {
       <div className={styles.char}>
         <h1 className={styles.char__name}>{charName}</h1>
         <div className={styles.char__info}>
-          <CharPhoto charPhoto={charPhoto} charName={charName} />
+          <CharPhoto
+            charId={charId}
+            charPhoto={charPhoto}
+            charName={charName}
+            charFavourite={charFavourite}
+            setCharFavourite={setCharFavourite}
+          />
           {charInfo && <CharInfo charInfo={charInfo} />}
           {charFilms && (
             <React.Suspense fallback={<UiLoading/>}>
