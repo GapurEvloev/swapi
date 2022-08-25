@@ -6,17 +6,22 @@ import {withErrorApi} from "../../hoc-helpers/withErrorApi";
 import {getApiResource} from "../../utils/network";
 import {API_CHAR} from "../../constants/api";
 
-import styles from "./Char.module.scss"
 import {getCharsImg} from "../../services/getCharsData";
 import CharPhoto from "../../components/Char/CharPhoto";
 import CharInfo from "../../components/Char/CharInfo";
 import LinkBack from "../../components/Char/LinkBack";
+import UiLoading from "../../components/Ui/UiLoading";
+
+import styles from "./Char.module.scss";
+
+const CharFilms = React.lazy(() => import("../../components/Char/CharFilms"));
 
 const Char = ({ setErrorApi }) => {
   const { charId } = useParams();
   const [charInfo, setCharInfo] = useState(null);
   const [charName, setCharName] = useState(null);
   const [charPhoto, setCharPhoto] = useState(null);
+  const [charFilms, setCharFilms] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -34,6 +39,7 @@ const Char = ({ setErrorApi }) => {
         ]);
         setCharName(res.name);
         setCharPhoto(getCharsImg(charId));
+        res.films.length && setCharFilms(res.films);
 
         setErrorApi(false);
       } else {
@@ -50,6 +56,11 @@ const Char = ({ setErrorApi }) => {
         <div className={styles.char__info}>
           <CharPhoto charPhoto={charPhoto} charName={charName} />
           {charInfo && <CharInfo charInfo={charInfo} />}
+          {charFilms && (
+            <React.Suspense fallback={<UiLoading/>}>
+              <CharFilms charFilms={charFilms}/>
+            </React.Suspense>
+          )}
         </div>
       </div>
     </>

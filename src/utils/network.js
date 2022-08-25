@@ -6,9 +6,7 @@ import { HTTP, HTTPS } from "../constants/api";
  * @returns {String} - changed url
  */
 export const changeHttp = (url) => {
-  const res = url ? url.replace(HTTP, HTTPS) : url;
-
-  return res;
+  return url ? url.replace(HTTP, HTTPS) : url;
 }
 
 /**
@@ -50,3 +48,10 @@ export const getApiResource = async (url) => {
 //
 // getApiResource(SW_ROOT+SW_CHARS)
 //   .then(body => console.log(body))
+
+//
+export const makeConcurrentRequest = async (url) => {
+  return await Promise.all(url.map(res => {
+    return fetch(res).then(res => res.json());
+  }));
+}

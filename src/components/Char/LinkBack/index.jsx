@@ -11,7 +11,8 @@ const LinkBack = () => {
   const handleBack = (e) => {
     e.preventDefault();
     navigate(-1);
-  }
+  };
+
   return (
     <div>
       <button
