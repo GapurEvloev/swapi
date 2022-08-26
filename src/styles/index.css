@@ -53,40 +53,40 @@
     0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
   --box-shadow-jedi:
-    -2px -2px 0 #ffd54e,
-    -2px -1px 0 #ffd54e,
-    -2px 0 0 #ffd54e,
-    -2px 1px 0 #ffd54e,
-    -2px 2px 0 #ffd54e,
-    -1px -2px 0 #ffd54e,
-    -1px -1px 0 #ffd54e,
-    -1px 0 0 #ffd54e,
-    -1px 1px 0 #ffd54e,
-    -1px 2px 0 #ffd54e,
-    0 -2px 0 #ffd54e,
-    0 -1px 0 #ffd54e,
-    0 0 0 #ffd54e,
-    0 1px 0 #ffd54e,
-    0 2px 0 #ffd54e,
-    1px -2px 0 #ffd54e,
-    1px -1px 0 #ffd54e,
-    1px 0 0 #ffd54e,
-    1px 1px 0 #ffd54e,
-    1px 2px 0 #ffd54e,
-    2px -2px 0 #ffd54e,
-    2px -1px 0 #ffd54e,
-    2px 0 0 #ffd54e;
+    -2px -2px 0 var(--theme-default-header),
+    -2px -1px 0 var(--theme-default-header),
+    -2px 0 0 var(--theme-default-header),
+    -2px 1px 0 var(--theme-default-header),
+    -2px 2px 0 var(--theme-default-header),
+    -1px -2px 0 var(--theme-default-header),
+    -1px -1px 0 var(--theme-default-header),
+    -1px 0 0 var(--theme-default-header),
+    -1px 1px 0 var(--theme-default-header),
+    -1px 2px 0 var(--theme-default-header),
+    0 -2px 0 var(--theme-default-header),
+    0 -1px 0 var(--theme-default-header),
+    0 0 0 var(--theme-default-header),
+    0 1px 0 var(--theme-default-header),
+    0 2px 0 var(--theme-default-header),
+    1px -2px 0 var(--theme-default-header),
+    1px -1px 0 var(--theme-default-header),
+    1px 0 0 var(--theme-default-header),
+    1px 1px 0 var(--theme-default-header),
+    1px 2px 0 var(--theme-default-header),
+    2px -2px 0 var(--theme-default-header),
+    2px -1px 0 var(--theme-default-header),
+    2px 0 0 var(--theme-default-header);
 
   /* THEMES */
-  --theme-light-header:   #dfe2df;
-  --theme-dark-header:    #ca6c6f;
-  --theme-neitral-header: #cccc46;
-  --theme-default-header: var(--theme-neitral-header);
+  --theme-light-header:   #29e52d;
+  --theme-dark-header:    #d82228;
+  --theme-neutral-header: #ffff00;
+  --theme-default-header: var(--theme-neutral-header);
 
-  --theme-light-bgimage:   linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
-  --theme-dark-bgimage:    linear-gradient(to right bottom, #000000, #160b11, #20141e, #281b2e, #2b2440);
-  --theme-neitral-bgimage: url(../static/images/bg.jpg);
-  --theme-default-bgimage: var(--theme-neitral-bgimage);
+  --theme-light-bgImage:   linear-gradient(to right bottom, #051937, #162454, #312d70, #533389, #7a359f);
+  --theme-dark-bgImage:    linear-gradient(to right bottom, #000000, #160b11, #20141e, #281b2e, #2b2440);
+  --theme-neutral-bgImage: url(../static/images/bg.jpg);
+  --theme-default-bgImage: var(--theme-neutral-bgImage);
 }
 
 /***************************************************
@@ -103,7 +103,7 @@ body {
   font-family: var(--ff-main);
   font-size: var(--fz-main);
   background-color: var(--color-dark-gray);
-  background-image: var(--theme-default-bgimage);
+  background-image: var(--theme-default-bgImage);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
@@ -118,7 +118,7 @@ img {
   color: #000;
   text-shadow: var(--box-shadow-jedi);
   line-height: 86%;
-  caret-color: #ffd54e;
+  caret-color: var(--theme-default-header);
   letter-spacing: initial;
   font-family: "StarWars", sans-serif;
 }
