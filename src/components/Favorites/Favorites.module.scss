@@ -20,8 +20,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
+  min-width: 20px;
   height: 20px;
+  padding: 0 5px;
   font-size: 13px;
   font-weight: var(--font-bold);
   color: var(--color-black);

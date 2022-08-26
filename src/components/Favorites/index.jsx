@@ -11,7 +11,7 @@ const Favorites = () => {
 
   useEffect(() => {
     const length = Object.keys(storeData).length;
-    setCount(length)
+    length.toString().length > 2 ? setCount("9+") : setCount(length);
   });
 
   return (
