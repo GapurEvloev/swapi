@@ -1,6 +1,8 @@
 import {ADD_CHAR_TO_FAVOURITE, REMOVE_CHAR_TO_FAVOURITE} from "../constants/actionTypes";
 import omit from "lodash/omit";
-const initState = {};
+import {getLocalStorage} from "../../utils/localstorage";
+
+const initState = getLocalStorage("swStore");
 
 const favouriteReducer = (state = initState, action) => {
   switch (action.type) {
