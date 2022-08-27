@@ -40,6 +40,9 @@ const Header = () => {
           <NavLink to="/chars?page=1">Characters</NavLink>
         </li>
         <li>
+          <NavLink to="/search">Search</NavLink>
+        </li>
+        <li>
           <NavLink to="/404">Not found</NavLink>
         </li>
       </ul>
