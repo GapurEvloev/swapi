@@ -1,7 +1,7 @@
 {
   "name": "react-swapi",
   "version": "0.1.0",
-  "homepage": "https://gapurevloev.github.io/react-swapi/",
+  "homepage": "https://gapurevloev.github.io/swapi/",
   "private": true,
   "dependencies": {
     "@redux-devtools/extension": "^3.2.3",

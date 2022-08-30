@@ -1,1 +1,1 @@
-export const REPO_NAME = 'react-swapi';
+export const REPO_NAME = 'swapi';
