@@ -55,6 +55,7 @@ const Chars = ({ setErrorApi }) => {
 
   return (
     <>
+      <h1 className="header__text">Characters</h1>
       <CharsNav
         getResource={getResource}
         prevPage={prevPage}

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './CharsList.module.scss';
 import {Link} from "react-router-dom";
+import styles from './CharsList.module.scss';
 
 const CharsList = ({chars}) => {
   return (

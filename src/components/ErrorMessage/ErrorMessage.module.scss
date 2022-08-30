@@ -10,3 +10,10 @@
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-fill-color: transparent;
 }
+
+.video {
+  display: block;
+  margin: var(--spacing-large) auto auto;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-white);
+}

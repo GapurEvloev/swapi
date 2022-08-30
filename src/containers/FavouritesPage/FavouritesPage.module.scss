@@ -1,3 +1,10 @@
 .comment {
   color: var(--color-white);
 }
+
+.gif {
+  display: block;
+  margin: var(--spacing-large) auto auto;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-white);
+}

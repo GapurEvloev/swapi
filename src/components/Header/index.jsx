@@ -31,7 +31,8 @@ const Header = () => {
 
   return (
     <header className={styles.container}>
-      <img className={styles.logo} src={icon} alt="Star Wars" />
+      <NavLink to="/"><img className={styles.logo} src={icon} alt="Star Wars" /></NavLink>
+
       <ul className={styles.list}>
         <li>
           <NavLink to="/">Home</NavLink>
@@ -41,6 +42,9 @@ const Header = () => {
         </li>
         <li>
           <NavLink to="/search">Search</NavLink>
+        </li>
+        <li>
+          <NavLink to="/fail">Fail</NavLink>
         </li>
         <li>
           <NavLink to="/404">Not found</NavLink>

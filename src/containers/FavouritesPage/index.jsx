@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import styles from './FavouritesPage.module.scss';
 import {useSelector} from "react-redux";
 import CharsList from "../../components/Chars/CharsList";
+import gif from "../../components/ErrorMessage/video/obi-van.gif";
+import UiGif from "../../components/Ui/UiGIf";
 
 const FavouritesPage = () => {
   const [chars, setChars] = useState([]);
@@ -28,7 +30,7 @@ const FavouritesPage = () => {
       {
         chars.length ?
           <CharsList chars={chars}/> :
-          <div className={styles.comment}>No data</div>
+          <UiGif src={gif} classes={styles.gif} />
       }
     </>
   );
